@@ -22,11 +22,15 @@ public class CsvFileReader implements FileReader {
     public void setReader(String path) {
         try {
             URL resource = getClass().getClassLoader().getResource(path);
-            File file = Paths.get(resource.toURI()).toFile();
-            String absolutePath = file.getAbsolutePath();
 
-            this.csvReader = new CSVReader(new java.io.FileReader((absolutePath)));
-        } catch (FileNotFoundException  | NullPointerException e) {
+            if (resource != null) {
+                File file = Paths.get(resource.toURI()).toFile();
+                String absolutePath = file.getAbsolutePath();
+                this.csvReader = new CSVReader(new java.io.FileReader((absolutePath)));
+            } else {
+                System.out.println("Could not get resource");
+            }
+        } catch (FileNotFoundException | NullPointerException e) {
             System.out.println("Could not open file in Path: " + path + " due to error: " + e.getMessage());
         } catch (URISyntaxException uriSyntaxException) {
             System.out.println("Illegal character: " + uriSyntaxException);
