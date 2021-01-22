@@ -1,5 +1,6 @@
 package de.exxcellent.challenge;
 
+import task.football.FootballTask;
 import task.weather.WeatherTask;
 
 /**
@@ -17,11 +18,12 @@ public final class App {
     public static void main(String... args) {
 
         WeatherTask weatherTask = new WeatherTask();
+        FootballTask footballTask = new FootballTask();
 
         String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", weatherTask.getDayWithSmallestTempSpread());
 
         String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+        System.out.printf("Team with smallest goal spread       : %s%n", footballTask.getTeamWithSmallestGoalSpread());
     }
 }

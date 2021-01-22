@@ -1,4 +1,4 @@
-package task.weather;
+package task.football;
 
 import io.CsvFileReader;
 import io.FileReader;
@@ -7,21 +7,21 @@ import task.helper.TaskConfig;
 
 import java.util.HashMap;
 
-public class WeatherTask {
+public class FootballTask {
 
-    public String getDayWithSmallestTempSpread() {
+    public String getTeamWithSmallestGoalSpread() {
 
         FileReader fileReader = new CsvFileReader();
-        fileReader.setReader(TaskConfig.WEATHER_CSV_FILE_PATH);
+        fileReader.setReader(TaskConfig.FOOTBALL_CSV_FILE_PATH);
 
         TaskCalculator taskCalculator = new TaskCalculator();
 
         HashMap<String, Integer> config = new HashMap<>();
         config.put(TaskConfig.OUTPUT_VALUE, 0);
-        config.put(TaskConfig.MAX_VALUE, 1);
-        config.put(TaskConfig.MIN_VALUE, 2);
+        config.put(TaskConfig.MAX_VALUE, 5);
+        config.put(TaskConfig.MIN_VALUE, 6);
 
         return taskCalculator.calcSmallestSpread(fileReader, true, config);
-
     }
+
 }
