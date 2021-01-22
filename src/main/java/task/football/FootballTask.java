@@ -9,6 +9,10 @@ import java.util.HashMap;
 
 public class FootballTask {
 
+    /**
+     * @author  Kubilay Anil <kubilay.anil@hotmail.com>
+     * @since   2021-01-22
+     */
     public String getTeamWithSmallestGoalSpread() {
 
         FileReader fileReader = new CsvFileReader();

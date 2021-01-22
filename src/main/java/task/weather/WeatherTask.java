@@ -9,6 +9,10 @@ import java.util.HashMap;
 
 public class WeatherTask {
 
+    /**
+     * @author Kubilay Anil <kubilay.anil@hotmail.com>
+     * @since 2021-01-22
+     */
     public String getDayWithSmallestTempSpread() {
 
         FileReader fileReader = new CsvFileReader();

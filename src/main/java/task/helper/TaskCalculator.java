@@ -6,6 +6,11 @@ import java.util.HashMap;
 
 public class TaskCalculator {
 
+
+    /**
+     * @author Kubilay Anil <kubilay.anil@hotmail.com>
+     * @since 2021-01-22
+     */
     public String calcSmallestSpread(FileReader csvReader, boolean skipFirstRow, HashMap<String, Integer> config) {
 
         int tmpLowestSpread = TaskConfig.STARTING_VALUE;

@@ -14,6 +14,10 @@ public class CsvFileReader implements FileReader {
 
     CSVReader csvReader;
 
+    /**
+     * @author Kubilay Anil <kubilay.anil@hotmail.com>
+     * @since 2021-01-22
+     */
     @Override
     public void setReader(String path) {
         try {
@@ -22,13 +26,17 @@ public class CsvFileReader implements FileReader {
             String absolutePath = file.getAbsolutePath();
 
             this.csvReader = new CSVReader(new java.io.FileReader((absolutePath)));
-        } catch (FileNotFoundException fileNotFoundException) {
-            System.out.println("Could not open file in Path: " + path + " due to error: " + fileNotFoundException.getMessage());
+        } catch (FileNotFoundException  | NullPointerException e) {
+            System.out.println("Could not open file in Path: " + path + " due to error: " + e.getMessage());
         } catch (URISyntaxException uriSyntaxException) {
             System.out.println("Illegal character: " + uriSyntaxException);
         }
     }
 
+    /**
+     * @author Kubilay Anil <kubilay.anil@hotmail.com>
+     * @since 2021-01-22
+     */
     @Override
     public String[] readNext() {
 
