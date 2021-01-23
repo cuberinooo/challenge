@@ -41,7 +41,7 @@ public class TaskCalculatorTest {
     /**
      * @author Kubilay Anil <kubilay.anil@hotmail.com>
      * @since 2021-01-22
-     * <p>
+     *
      * There are no requirements defined for this case, so the return value is the first day or team with the smallest spread
      */
     @Test
